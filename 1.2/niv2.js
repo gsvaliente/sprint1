@@ -1,2 +1,3 @@
 //EJERCICIO 2
-const func = atributo => {};
+const func = atributo => ({ nombre: atributo });
+console.log(func('Gabriel'));
