@@ -1,2 +1,3 @@
 # sprint1
-ejecricios sprint 1
+
+Ejercicios del primer sprint.
