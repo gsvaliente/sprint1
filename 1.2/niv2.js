@@ -1,5 +1,5 @@
 //EJERCICIO 1
-const func = atributo => ({ nombre: atributo });
+const func = (atributo) => ({ nombre: atributo });
 console.log(func('Gabriel'));
 
 //EJERCICIO 2
@@ -9,9 +9,9 @@ class Persona {
   }
 
   imprimirNombre() {
-    return this.nombre;
+    console.log(this.nombre);
   }
 }
 
 let persona = new Persona('Gabriel');
-console.log(persona.imprimirNombre());
+persona.imprimirNombre();
