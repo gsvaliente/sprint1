@@ -1,4 +1,14 @@
-//EJERCICIO 1
+//1.2
+//NIVEL 1
+let a = 1;
+let b = 2;
+
+(() => {
+  console.log(a + b);
+})();
+
+///////////////////////////
+//NIVEL 2
 const func = (atributo) => ({ nombre: atributo });
 console.log(func('Gabriel'));
 
