@@ -30,4 +30,53 @@ ejercicio2(5, (num) => {
 
 //NIVEL 2
 //EJERCICIO 1
-const employee = new Promise((resolve, reject) => {});
+let employees = [
+  {
+    id: 1,
+    name: 'Linux Torvalds',
+  },
+  {
+    id: 2,
+    name: 'Bill Gates',
+  },
+  {
+    id: 3,
+    name: 'Jeff Bezos',
+  },
+];
+let salaries = [
+  {
+    id: 1,
+    salary: 4000,
+  },
+  {
+    id: 2,
+    salary: 1000,
+  },
+  {
+    id: 3,
+    salary: 2000,
+  },
+];
+
+const getEmployee = (id) => {
+  return new Promise((resolve, reject) => {
+    if (employees[0].id === id) {
+      resolve(employees[0].name);
+    } else if (employees[1].id === id) {
+      resolve(employees[1].name);
+    } else if (employees[2].id === id) {
+      resolve(employees[2].name);
+    } else {
+      reject('User does not exist');
+    }
+  });
+};
+
+getEmployee(2)
+  .then((name) => {
+    console.log(`Employee's name: ${name}`);
+  })
+  .catch((name) => {
+    console.log('Error: ' + name);
+  });
