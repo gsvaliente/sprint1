@@ -78,6 +78,23 @@ getEmployee(3)
   });
 
 // //EJERCICIO 2
+const getSalary = (nombre) => {
+  return new Promise((resolve, reject) => {
+    for (let i = 0; i < employees.length; i++) {
+      if (employees[i].name === nombre) {
+        resolve(salaries[i++].salary);
+      }
+    }
+    reject('User was not found');
+  });
+};
+getSalary('Bill Gates')
+  .then((mensaje) => {
+    console.log(mensaje);
+  })
+  .catch((mensaje) => {
+    console.log(mensaje);
+  });
 // const getSalary = (obj) => {
 //   return new Promise((resolve, reject) => {
 //     if (obj === employees[0].id) {
