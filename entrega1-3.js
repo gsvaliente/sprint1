@@ -77,7 +77,7 @@ const getEmployee = (id) => {
   });
 };
 
-// getEmployee(3)
+// getEmployee(4)
 //   .then((name) => {
 //     console.log(`Employee's name: ${name}`);
 //   })
@@ -106,19 +106,16 @@ const getSalary = (nombre) => {
 
 // //EJERCICIO 3
 const nameAndSalary = (id) => {
-  return new Promise((resolve, reject) => {
-    getEmployee(id)
-      .then((employee) => {
-        console.log(`Employee name: ${employee}`);
-        return getSalary(employee);
-      })
-      .then((salary) => {
-        console.log(`Salary: ${salary}`);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  });
+  getEmployee(id)
+    .then((employee) => {
+      console.log(`Employee name: ${employee}`);
+      return getSalary(employee);
+    })
+    .then((salary) => {
+      console.log(`Salary: ${salary}`);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
-
 nameAndSalary(1);
