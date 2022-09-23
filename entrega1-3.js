@@ -1,7 +1,6 @@
 'use strict';
 // NIVEL 1
 //EJERCICIO 1
-//create a function that returns a promise that calls the resolve or reject function
 const func = () => {
   return new Promise((resolve, reject) => {
     let ranNum = Math.floor(Math.random() * 10);
@@ -22,7 +21,6 @@ func()
   });
 
 //EJERCICIO 2
-//crea una arrow function que reciba un parametro y una cb
 const arrow = (para, cb) => {};
 
 // //NIVEL 2
