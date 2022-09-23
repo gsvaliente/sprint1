@@ -21,7 +21,17 @@ func()
   });
 
 //EJERCICIO 2
-const arrow = (para, cb) => {};
+const arrow = (num, cb) => {
+  for (let i = 1; i <= num; i++) {
+    console.log(`${i}: ${cb()}`);
+  }
+};
+
+const callback = () => {
+  return 'Hola que tal';
+};
+
+arrow(2, callback);
 
 // //NIVEL 2
 // //EJERCICIO 1
