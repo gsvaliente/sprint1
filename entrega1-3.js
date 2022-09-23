@@ -69,13 +69,13 @@ const getEmployee = (id) => {
   });
 };
 
-getEmployee(3)
-  .then((name) => {
-    console.log(`Employee's name: ${name}`);
-  })
-  .catch((name) => {
-    console.log('Error: ' + name);
-  });
+// getEmployee(3)
+//   .then((name) => {
+//     console.log(`Employee's name: ${name}`);
+//   })
+//   .catch((name) => {
+//     console.log('Error: ' + name);
+//   });
 
 // //EJERCICIO 2
 const getSalary = (nombre) => {
@@ -88,40 +88,29 @@ const getSalary = (nombre) => {
     reject('User was not found');
   });
 };
-getSalary('Bill Gates')
-  .then((mensaje) => {
-    console.log(mensaje);
-  })
-  .catch((mensaje) => {
-    console.log(mensaje);
-  });
-// const getSalary = (obj) => {
-//   return new Promise((resolve, reject) => {
-//     if (obj === employees[0].id) {
-//       resolve(salaries[0].salary);
-//     } else if (obj === employees[1].id) {
-//       resolve(salaries[1].salary);
-//     } else if (obj === employees[2].id) {
-//       resolve(salaries[2].salary);
-//     } else {
-//       reject('User does not exist');
-//     }
-//   });
-// };
-
-// getSalary(1)
-//   .then((salary) => {
-//     console.log('salary: ' + salary);
-//   })
-//   .catch((salary) => {
-//     console.log(salary);
-//   });
-
-// //EJERCICIO 3
-// Promise.all([getEmployee(1), getSalary(1)])
+// getSalary('Bill Gates')
 //   .then((mensaje) => {
 //     console.log(mensaje);
 //   })
 //   .catch((mensaje) => {
 //     console.log(mensaje);
 //   });
+
+// //EJERCICIO 3
+const nameAndSalary = (id) => {
+  return new Promise((resolve, reject) => {
+    getEmployee(id)
+      .then((employee) => {
+        console.log(`Employee name: ${employee}`);
+        return getSalary(employee);
+      })
+      .then((salary) => {
+        console.log(`Salary: ${salary}`);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+};
+
+nameAndSalary(1);
