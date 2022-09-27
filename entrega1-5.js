@@ -29,10 +29,10 @@ const compress = (file) => {
 // compress('writeMe.txt');
 
 ////NIVEL 2
-const repeatMessage = (i) => {
+const repeatMessage = (mensaje, i) => {
   setTimeout(() => {
-    console.log('Hola que tal');
-    repeatMessage(++i);
+    console.log(mensaje);
+    repeatMessage(mensaje, ++i);
   }, 1000);
 };
-// repeatMessage(0);
+repeatMessage('Hola', 0);
