@@ -21,18 +21,21 @@ const print = (dir) => {
 //EJERCICIO 3
 //COMPRESS FILE
 const compress = (file) => {
-  const gzip = zlib.createGzip();
+  const zip = zlib.createGzip();
   const inp = fs.createReadStream(file);
   const out = fs.createWriteStream(file + '.gz');
-  inp.pipe(gzip).pipe(out);
+  inp.pipe(zip).pipe(out);
 };
 // compress('writeMe.txt');
 
 ////NIVEL 2
+//EJERCICIO 1
 const repeatMessage = (mensaje, i) => {
   setTimeout(() => {
     console.log(mensaje);
     repeatMessage(mensaje, ++i);
   }, 1000);
 };
-repeatMessage('Hola', 0);
+// repeatMessage('Hola', 0);
+
+//EJERCICIO 2
