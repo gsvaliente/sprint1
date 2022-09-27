@@ -8,7 +8,7 @@ const zlib = require('zlib');
 const write = (mensaje) => {
   fs.writeFileSync('writeMe.txt', mensaje);
 };
-write('Hola que tal!');
+// write('Hola que tal!');
 
 //EJERCICIO 2
 //READ THE FILE
@@ -16,7 +16,7 @@ const print = (dir) => {
   const read = fs.readFileSync(`${dir}`, 'utf-8');
   console.log(read);
 };
-print('writeMe.txt');
+// print('writeMe.txt');
 
 //EJERCICIO 3
 //COMPRESS FILE
@@ -26,6 +26,13 @@ const compress = (file) => {
   const out = fs.createWriteStream(file + '.gz');
   inp.pipe(gzip).pipe(out);
 };
-compress('writeMe.txt');
+// compress('writeMe.txt');
 
 ////NIVEL 2
+const repeatMessage = (i) => {
+  setTimeout(() => {
+    console.log('Hola que tal');
+    repeatMessage(++i);
+  }, 1000);
+};
+// repeatMessage(0);
