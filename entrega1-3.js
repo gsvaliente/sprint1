@@ -118,4 +118,4 @@ const nameAndSalary = (id) => {
       console.log(err);
     });
 };
-nameAndSalary(1);
+nameAndSalary(4);
