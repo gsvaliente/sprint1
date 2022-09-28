@@ -30,12 +30,24 @@ const compress = (file) => {
 
 ////NIVEL 2
 //EJERCICIO 1
-const repeatMessage = (mensaje, i) => {
+const repeatMessage = (mensaje) => {
   setTimeout(() => {
     console.log(mensaje);
-    repeatMessage(mensaje, ++i);
+    repeatMessage(mensaje);
   }, 1000);
 };
-// repeatMessage('Hola', 0);
+// repeatMessage('Hola');
 
 //EJERCICIO 2
+const { spawn } = require('child_process');
+const showHome = () => {
+  const child = spawn('ls', [process.env.HOME]);
+  child.stdout.on('data', (data) => {
+    console.log(`HOME directory: \n${data}`);
+  });
+
+  child.stderr.on('data', (data) => {
+    console.log(`stdErr: ${data}`);
+  });
+};
+// showHome();
