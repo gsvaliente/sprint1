@@ -15,4 +15,11 @@ const sub = (a = 0, b = 0, ...c) => {
   return total;
 };
 
-module.exports = { add, sub };
+const mult = (a = 0, b = 0, ...c) => {
+  let total = a * b;
+  c.forEach((num) => {
+    total *= num;
+  });
+  return total;
+};
+module.exports = { add, sub, mult };
