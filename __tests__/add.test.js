@@ -1,4 +1,4 @@
-const add = require('../app/operations');
+const { add } = require('../app/operations');
 
 describe('the functionality of the add function', () => {
   test('if the response is a numbers', () => {
@@ -13,7 +13,7 @@ describe('the functionality of the add function', () => {
     expect(add(5)).toBe(5);
     expect(add(167)).toBe(167);
   });
-  test('if the function can more than 2 numbers', () => {
+  test('if the function can add more than 2 numbers', () => {
     expect(add(1, 2, 3)).toBe(6);
     expect(add(-8, -5, 20, 4)).toBe(11);
   });

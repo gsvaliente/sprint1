@@ -7,13 +7,12 @@ const add = (a = 0, b = 0, ...c) => {
   return total;
 };
 
-module.exports = add;
-
 const sub = (a = 0, b = 0, ...c) => {
   let total = a - b;
-  c.forEach((i) => {
-    total -= i;
+  c.forEach((num) => {
+    total -= num;
   });
   return total;
 };
-module.exports = sub;
+
+module.exports = { add, sub };
