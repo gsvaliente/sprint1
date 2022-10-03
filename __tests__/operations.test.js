@@ -1,6 +1,6 @@
 const { add, sub, mult, div } = require('../app/operations');
-
-describe('the functionality of the add function', () => {
+//addition
+describe('The functionality of the add function', () => {
   test('if the response is a numbers', () => {
     expect(typeof add(5, 5)).toBe('number');
     expect(typeof add(5, 'a')).toBe('string');
@@ -18,7 +18,7 @@ describe('the functionality of the add function', () => {
     expect(add(-8, -5, 20, 4)).toBe(11);
   });
 });
-
+//subtraction
 describe('the functionality of the subtract function', () => {
   test('if the response is a numbers', () => {
     expect(typeof sub(5, 5)).toBe('number');
@@ -37,7 +37,7 @@ describe('the functionality of the subtract function', () => {
     expect(sub(-8, -5, 20, 4)).toBe(-27);
   });
 });
-
+//multiplication
 describe('If the mult function works accordingly', () => {
   it('tests if the answer to the function is a number', () => {
     expect(mult(2, 5)).toBe(10);
@@ -57,8 +57,8 @@ describe('If the mult function works accordingly', () => {
     expect(mult(15, 10, 0)).toBe(0);
   });
 });
-
-describe('the proper functionality of the div function', () => {
+//division
+describe('The proper functionality of the div function', () => {
   it('tests if the answer is actually a number', () => {
     expect(div(10, 5)).toBe(2);
     expect(div('a', 100)).toBe(NaN);
