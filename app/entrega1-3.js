@@ -84,10 +84,12 @@ const getEmployee = (id) => {
 //   .catch((name) => {
 //     console.log('Error: ' + name);
 //   });
-module.exports = getEmployee;
 
 // //EJERCICIO 2
 const getSalary = (nombre) => {
+  if (typeof nombre !== 'string') {
+    throw new Error('parameter must be a string');
+  }
   return new Promise((resolve, reject) => {
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].name === nombre) {
@@ -104,6 +106,8 @@ const getSalary = (nombre) => {
 //   .catch((mensaje) => {
 //     console.log(mensaje);
 //   });
+
+module.exports = { getEmployee, getSalary };
 
 // //EJERCICIO 3
 const nameAndSalary = (id) => {

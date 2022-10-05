@@ -1,4 +1,4 @@
-const getEmployee = require('../app/entrega1-3');
+const { getEmployee } = require('../app/entrega1-3');
 
 describe('The functionality of the getEmployee function', () => {
   it('should be a function', () => {
