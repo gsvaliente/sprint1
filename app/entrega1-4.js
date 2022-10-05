@@ -69,25 +69,27 @@ console.log('async test');
 
 //EJERCICIO 2
 const trial = () => {
-  try {
-    return new Promise((resolve, reject) => {
-      if (Math.random() >= 0.5) {
-        resolve('Promise passed');
-      } else {
-        reject('Promise failed⛔️');
-      }
-    });
-  } catch (err) {
-    console.log(err);
-  }
+  return new Promise((resolve, reject) => {
+    if (Math.random() >= 0.5) {
+      resolve('Promise passed 🎉');
+    } else {
+      reject('Promise failed⛔️');
+    }
+  });
 };
 const timeout = async () => {
-  const result = await trial();
-  setTimeout(() => {
-    console.log(result);
-  }, 2000);
+  try {
+    const result = await trial();
+    setTimeout(() => {
+      console.log(result);
+    }, 2000);
+  } catch (error) {
+    setTimeout(() => {
+      console.log(error);
+    }, 2000);
+  }
 };
-// timeout();
+timeout();
 
 ////NIVEL 2
 //EJERCICIO 1
