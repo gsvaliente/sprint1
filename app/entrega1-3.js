@@ -65,41 +65,43 @@ let salaries = [
 ];
 
 const getEmployee = (id) => {
-  if (id === undefined || typeof id === 'string')
-    throw new Error('id must be a number');
   return new Promise((resolve, reject) => {
+    if (id === undefined || typeof id === 'string')
+      throw new Error('id must be a number');
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].id === id) {
-        resolve(employees[i++].name);
+        let emName = { Employee: employees[i++].name };
+        resolve(emName);
       }
     }
     reject('id not found');
   });
 };
 
-// getEmployee(2)
+// getEmployee(1)
 //   .then((name) => {
-//     console.log(`Employee's name: ${name}`);
+//     console.log(name);
 //   })
-//   .catch((name) => {
-//     console.log('Error: ' + name);
+//   .catch((error) => {
+//     console.log('Error: ' + error);
 //   });
 
 // //EJERCICIO 2
-const getSalary = (nombre) => {
-  if (typeof nombre !== 'string') {
-    throw new Error('parameter must be a string');
-  }
+const getSalary = (obj) => {
   return new Promise((resolve, reject) => {
+    if (typeof obj !== 'object') {
+      throw new Error('parameter must be an object');
+    }
     for (let i = 0; i < employees.length; i++) {
-      if (employees[i].name === nombre) {
-        resolve(salaries[i++].salary);
+      if (employees[i].name === obj.Employee) {
+        let emSalary = salaries[i++].salary;
+        resolve(emSalary);
       }
     }
     reject('User was not found');
   });
 };
-// getSalary('Bill Gates')
+// getSalary({ Employee: 'Linux Torvalds' })
 //   .then((mensaje) => {
 //     console.log(mensaje);
 //   })
@@ -113,14 +115,14 @@ module.exports = { getEmployee, getSalary };
 const nameAndSalary = (id) => {
   getEmployee(id)
     .then((employee) => {
-      console.log(`Employee name: ${employee}`);
+      console.log(employee);
       return getSalary(employee);
     })
     .then((salary) => {
-      console.log(`Salary: ${salary}`);
+      console.log(salary);
     })
     .catch((err) => {
       console.log(err);
     });
 };
-nameAndSalary(4);
+nameAndSalary(3);
