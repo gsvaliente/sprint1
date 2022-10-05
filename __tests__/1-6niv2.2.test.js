@@ -8,7 +8,7 @@ describe('the functionality of getSalary', () => {
     expect(() => getSalary()).toThrow();
   });
   it('should throw if the parameter is not a string', () => {
-    expect(() => getSalary(2)).toThrow();
+    expect(() => getSalary({})).toThrow();
   });
   it('should return a number', () => {
     return getSalary('Bill Gates').then((data) => {
