@@ -65,25 +65,26 @@ let salaries = [
 ];
 
 const getEmployee = (id) => {
+  if (id === undefined || typeof id === 'string')
+    throw new Error('id must be a number');
   return new Promise((resolve, reject) => {
-    let i = 0;
-    while (i < employees.length) {
+    for (let i = 0; i < employees.length; i++) {
       if (employees[i].id === id) {
         resolve(employees[i++].name);
       }
-      i++;
     }
-    reject('User was not found');
+    reject('id not found');
   });
 };
 
-// getEmployee(4)
+// getEmployee(2)
 //   .then((name) => {
 //     console.log(`Employee's name: ${name}`);
 //   })
 //   .catch((name) => {
 //     console.log('Error: ' + name);
 //   });
+module.exports = getEmployee;
 
 // //EJERCICIO 2
 const getSalary = (nombre) => {
