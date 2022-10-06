@@ -12,13 +12,13 @@ const func = () => {
     }
   });
 };
-func()
-  .then((mensaje) => {
-    console.log(mensaje);
-  })
-  .catch((mensaje) => {
-    console.log(mensaje);
-  });
+// func()
+//   .then((mensaje) => {
+//     console.log(mensaje);
+//   })
+//   .catch((mensaje) => {
+//     console.log(mensaje);
+//   });
 
 //EJERCICIO 2
 const arrow = (hora, cb) => {
@@ -36,7 +36,7 @@ const getName = (name) => {
   return name;
 };
 
-arrow(19, getName('Miguel'));
+// arrow(19, getName('Miguel'));
 
 // //NIVEL 2
 // //EJERCICIO 1
@@ -71,8 +71,6 @@ let salaries = [
 
 const getEmployee = (id) => {
   return new Promise((resolve, reject) => {
-    if (id === undefined || typeof id === 'string')
-      throw new Error('id must be a number');
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].id === id) {
         let emName = { Employee: employees[i++].name };
@@ -94,9 +92,6 @@ const getEmployee = (id) => {
 // //EJERCICIO 2
 const getSalary = (obj) => {
   return new Promise((resolve, reject) => {
-    if (typeof obj !== 'object') {
-      throw new Error('parameter must be an object');
-    }
     for (let i = 0; i < employees.length; i++) {
       if (employees[i].name === obj.Employee) {
         let emSalary = salaries[i++].salary;
@@ -130,4 +125,4 @@ const nameAndSalary = (id) => {
       console.log(err);
     });
 };
-nameAndSalary(3);
+// nameAndSalary(3);

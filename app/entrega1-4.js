@@ -89,25 +89,30 @@ const timeout = async () => {
     }, 2000);
   }
 };
-timeout();
+// timeout();
 
 ////NIVEL 2
-//EJERCICIO 1
-// const double = async (num) => {
-//   await new Promise((resolve) => {
-//     setTimeout(() => {
-//       resolve();
-//       return num * 2;
-//     }, 2000);
-//   });
-// };
+// EJERCICIO 1
+const double = async (num) => {
+  await new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+      console.log(num * 2);
+    }, 2000);
+  });
+};
 
-// // double(2);
+// double(2);
 
-// const getSum = (num1, num2, num3) => {
-//   const one = double(num1);
-//   const two = double(num2);
-//   const three = double(num3);
-//   console.log(one + two + three);
-// };
-// getSum(1, 2, 3);
+const getSum = async (num1, num2, num3) => {
+  const one = await double(num1);
+
+  const two = (await double(num2)) + one;
+
+  const three = (await double(num3)) + two;
+
+  console.log(three);
+
+  // console.log(one + two + three);
+};
+getSum(1, 2, 3);
