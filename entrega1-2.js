@@ -1,12 +1,12 @@
 //1.2
 //NIVEL 1
-let a = 1;
-let b = 2;
-
+// ((a, b) => {
+//   console.log(a + b);
+// })(2, 4);
 (() => {
-  console.log(a + b);
+  let sum = 2 + 2;
+  console.log(sum);
 })();
-
 ///////////////////////////
 //NIVEL 2
 const func = (atributo) => ({ nombre: atributo });
