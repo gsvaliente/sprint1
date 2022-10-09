@@ -21,25 +21,21 @@ const func = () => {
 //   });
 
 //EJERCICIO 2
-const arrow = (hora, cb) => {
-  let name = cb;
-  if (hora > 24) {
-    console.log('Hora no valida');
-  } else {
-    if (hora <= 11) {
-      console.log(`Buenos dias ${name}`);
-    } else if (hora <= 18) {
-      console.log(`Buenas tardes ${name}`);
-    } else {
-      console.log(`Buenas noches ${name}`);
-    }
-  }
-};
-const getName = (name) => {
-  return name;
+const arrow = (par, cb) => {
+  cb(par);
 };
 
-// arrow(23, getName('Miguel'));
+const getHour = (hour) => {
+  if (hour <= 11) {
+    console.log(`Buenos dias`);
+  } else if (hour <= 18) {
+    console.log(`Buenas tardes`);
+  } else {
+    console.log(`Buenas noches`);
+  }
+};
+
+// arrow(9, getHour1);
 
 // //NIVEL 2
 // //EJERCICIO 1
